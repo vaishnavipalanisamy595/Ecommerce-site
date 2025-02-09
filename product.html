@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #fff7d6; /* Light Yellow Background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: black;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-detail {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-detail img {
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .product-info {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .product-info h2 {
+            font-size: 24px;
+        }
+
+        .product-info p {
+            font-size: 18px;
+            color: #444;
+        }
+
+        .buy-button {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #e68a00;
+        }
+
+        @media screen and (max-width: 768px) {
+            .product-detail {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Product Details</h1>
+        <div class="product-detail">
+            <img id="productImage" src="" alt="Product Image">
+            <div class="product-info">
+                <h2 id="productName"></h2>
+                <p id="productPrice"></p>
+                <p id="productDescription"></p>
+                <button class="buy-button" onclick="buyNow()">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load Product Details from LocalStorage
+        document.getElementById("productName").innerText = localStorage.getItem("productName");
+        document.getElementById("productPrice").innerText = "$" + localStorage.getItem("productPrice");
+        document.getElementById("productDescription").innerText = localStorage.getItem("productDescription");
+        document.getElementById("productImage").src = localStorage.getItem("productImage");
+
+        function buyNow() {
+            window.location.href = "checkout.html";
+        }
+    </script>
+
+</body>
+</html>
+

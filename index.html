@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce - Home</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background-color: #fff7d6; /* Light Yellow Background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: black;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        @media screen and (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Featured Products</h1>
+        <div class="product-grid">
+            <div class="product" onclick="viewProduct('Running Shoes', 49.99, 'shoes.jpg', 'Comfortable running shoes for everyday use.')">
+                <img src="shoe.jpg" alt="Running Shoes">
+                <h3>Running Shoes</h3>
+                <p>$49.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('Leather Bag', 79.99, 'bag.jpg', 'Stylish and durable leather bag for all occasions.')">
+                <img src="bag.jpg" alt="Leather Bag">
+                <h3>Leather Bag</h3>
+                <p>$79.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('Smart Watch', 129.99, 'smartwatch.jpg', 'Advanced smart watch with health tracking features.')">
+                <img src="watch.jpg" alt="Smart Watch">
+                <h3>Smart Watch</h3>
+                <p>$129.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('Home Decor Lamp', 39.99, 'lamp.jpg', 'Elegant lamp to enhance your home aesthetics.')">
+                <img src="lamp.jpg" alt="Home Decor Lamp">
+                <h3>Home Decor Lamp</h3>
+                <p>$39.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('CBD Skincare', 24.99, 'skincare.jpg', 'Organic skincare with CBD extracts.')">
+                <img src="skincare.jpg" alt="CBD Skincare">
+                <h3>CBD Skincare</h3>
+                <p>$24.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('Mental Health Supplements', 34.99, 'supplements.jpg', 'Natural supplements for mental wellness.')">
+                <img src="supplements.jpg" alt="Mental Health Supplements">
+                <h3>Mental Health Supplements</h3>
+                <p>$34.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('Ebook on Productivity', 9.99, 'ebook.jpg', 'A detailed guide to boost productivity.')">
+                <img src="ebook.jpg" alt="Ebook on Productivity">
+                <h3>Ebook on Productivity</h3>
+                <p>$9.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('Handmade Candles', 19.99, 'candles.jpg', 'Scented handmade candles for relaxation.')">
+                <img src="candles.jpg" alt="Handmade Candles">
+                <h3>Handmade Candles</h3>
+                <p>$19.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('Organic Kids Clothing', 29.99, 'kids-clothing.jpg', 'Soft and comfortable organic kids clothing.')">
+                <img src="kids-clothing.jpg" alt="Organic Kids Clothing">
+                <h3>Organic Kids Clothing</h3>
+                <p>$29.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('Power-Assisted Ebike', 9999.99, 'ebike.jpg', 'Eco-friendly electric bike for easy commuting.')">
+                <img src="ebike.jpg" alt="Power-Assisted Ebike">
+                <h3>Power-Assisted Ebike</h3>
+                <p>$9999.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('Smart Speaker', 149.99, 'smartspeaker.jpg', 'Voice-controlled smart speaker with AI.')">
+                <img src="smartspeaker.jpg" alt="Smart Speaker">
+                <h3>Smart Speaker</h3>
+                <p>$149.99</p>
+            </div>
+
+            <div class="product" onclick="viewProduct('earbuds', 49.99, 'earbuds.jpg', ' nice experience.')">
+                <img src="earbuds.jpg" alt="earbuds">
+                <h3>earbuds</h3>
+                <p>$49.99</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function viewProduct(name, price, image, description) {
+            localStorage.setItem("productName", name);
+            localStorage.setItem("productPrice", price);
+            localStorage.setItem("productImage", image);
+            localStorage.setItem("productDescription", description);
+            window.location.href = "product.html";
+        }
+    </script>
+
+</body>
+</html>

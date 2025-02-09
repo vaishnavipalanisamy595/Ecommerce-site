@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #fff7d6; /* Light Yellow */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .pay-btn {
+            background: #28a745;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Checkout</h1>
+        <img id="checkoutImage" src="" alt="Product">
+        <h2 id="checkoutName"></h2>
+        <h3 id="checkoutPrice"></h3>
+
+        <h3>Enter Payment Details</h3>
+        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="Expiry Date" required>
+        <input type="text" placeholder="CVV" required>
+
+        <button class="pay-btn" onclick="confirmPayment()">Pay Now</button>
+    </div>
+
+    <script>
+        document.getElementById("checkoutName").innerText = localStorage.getItem("productName");
+        document.getElementById("checkoutPrice").innerText = "$" + localStorage.getItem("productPrice");
+        document.getElementById("checkoutImage").src = localStorage.getItem("productImage");
+
+        function confirmPayment() {
+            alert("Payment Successful! Thank you for your purchase.");
+            localStorage.removeItem("productName");
+            localStorage.removeItem("productPrice");
+            localStorage.removeItem("productImage");
+            localStorage.removeItem("productDescription");
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>
